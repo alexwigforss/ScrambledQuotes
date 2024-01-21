@@ -133,7 +133,7 @@ splashScreenButton.addEventListener("click", () => {
         globalSeconds = seconds;
     }
     currentMinute = sentenceArray.length - 1;
-    setTime(sentenceArray.length, 0);
+    setTime(sentenceArray.length - 1, 0);
 
     let setLabels = () => {
         countdownLabel.innerHTML = `Time<br> ${globalMinutes}m ${globalSeconds}s`;
@@ -394,7 +394,7 @@ splashScreenButton.addEventListener("click", () => {
 
         // SET NEW TIME
         currentMinute = sentenceArray.length - 1;
-        setTime(sentenceArray.length, 0);
+        setTime(sentenceArray.length - 1, 0);
         setLabels();
         // clearInterval(countdownInterval);
         resumeCountdown();
@@ -456,14 +456,12 @@ splashScreenButton.addEventListener("click", () => {
             let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Even cooler wold be animating this on a path like in
-            // 
             if (minutes < currentMinute) {
-                console.log("One minute passed!" + currentMinute);
+                console.log(minutes + "  " + currentMinute);
+                //console.log("One minute passed!" + currentMinute);
                 const numericPartOfHint = Math.ceil(wordCountHint / currentMinute);
                 partOfHint = hintArray.slice(0, numericPartOfHint).join(" ");
                 setHint(partOfHint);
-                // document.querySelector('#HINT').innerHTML = ` ${ partOfHint } `;
                 currentMinute--;
             }
 
