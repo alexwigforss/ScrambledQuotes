@@ -1,0 +1,209 @@
+:root
+{
+    --dialog-height: 60vh;
+}
+
+body
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0 0 2pt rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 335px) {
+    body {
+        flex-direction: column;
+    }
+
+}
+
+.aboutDialog
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hs-container
+{
+    display: none;
+    content: "";
+    clear: both
+}
+
+button
+{
+    background-color: steelblue;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border-color: steelblue;
+    color: aliceblue;
+    box-shadow: 2px 2px rgba(106, 90, 205, 1);
+    transition: background-color 1s;
+    margin: 0px 2dvw 0px 2dvw;
+}
+
+button:hover
+{
+    color: midnightblue;
+    border-style: none;
+    background-color: azure;
+    border: solid;
+    transition: background-color 1s;
+
+}
+
+button:active
+{
+    border-radius: 16px;
+    transition: border-radius 0.1s;
+    box-shadow: none;
+}
+
+.buttonGrowth
+{
+    transition: transform 0.5s;
+}
+
+.buttonGrowth:hover
+{
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+
+.gameDialog
+{
+    display: none;
+    position: absolute;
+    background-color: lightskyblue;
+    /* background-color: rgb(144, 187, 212); */
+    width: 100vw;
+    height: 100vh;
+    transform-origin: center;
+}
+
+.dialogs
+{
+    position: absolute;
+    background-color: rgb(228, 245, 255);
+    width: 80vw;
+    height: var(--dialog-height);
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px black;
+    display: none;
+    transform-origin: center;
+}
+
+.closeButton
+{
+    /* display: none; */
+    animation: fade-in 0.5s ease-out;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: lightskyblue;
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    border-color: steelblue;
+    color: aliceblue;
+    box-shadow: 2px 2px rgba(70, 130, 180, 1);
+    transition: background-color 1s;
+    margin: 0px 2dvw 0px 2dvw;
+}
+
+.pauseButton,
+.closeGameButton
+{
+    display: none;
+}
+
+.fade-in
+{
+    animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in
+{
+    from
+    {
+        opacity: 0;
+    }
+
+    to
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out
+{
+    from
+    {
+        opacity: 1;
+    }
+
+    to
+    {
+        opacity: 0;
+    }
+}
+
+@keyframes expandGame
+{
+    0%
+    {
+        width: 70vw;
+        height: 70vh;
+    }
+
+    100%
+    {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@keyframes expand
+{
+    0%
+    {
+        width: 10px;
+        height: 10px;
+    }
+
+    75%
+    {
+        width: 85vw;
+        /* height: 90vh; */
+        height: calc(var(--dialog-height) * 1.2);
+    }
+
+    100%
+    {
+        width: 80vw;
+        height: var(--dialog-height);
+    }
+}
+
+@keyframes contract
+{
+    0%
+    {
+        height: var(--dialog-height);
+        height: 80vh;
+    }
+
+    100%
+    {
+        width: 10px;
+        height: 10px;
+    }
+}

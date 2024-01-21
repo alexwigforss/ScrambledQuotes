@@ -1,0 +1,103 @@
+body
+{
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.splashButton
+{
+    z-index: 1;
+    cursor: pointer;
+    background-size: cover;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 455px;
+    min-width: 455px;
+}
+
+@media screen and (max-width: 3000px)
+{
+    .splashButton
+    {
+        background-image: url('/pictures/comic_juggler_3.jpeg');
+        width: 90dvh;
+        height: 90dvh;
+    }
+
+    .mainFrame
+    {
+        max-width: 780px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 993px)
+{
+    .splashButton
+    {
+        background-image: url('/pictures/comic_juggler_700.jpeg');
+        max-width: 700px;
+        max-height: 700px;
+        width: 70dvh;
+        height: 70dvh;
+    }
+
+    .gameDialog
+    {
+        background-image: url('/pictures/scenes/lg/1.jpg');
+    }
+
+}
+
+/* @media screen and (max-width: 940px) { */
+@media screen and (max-width: 992px)
+{
+    .splashButton
+    {
+        background-image: url('/pictures/comic_juggler_500.jpeg');
+        max-width: 500px;
+        max-height: 500px;
+        width: 70dvh;
+        height: 70dvh;
+    }
+
+    .gameDialog
+    {
+        background-image: url('/pictures/scenes/md/1.jpg');
+    }
+
+}
+
+@media screen and (max-width: 600px)
+{
+    .splashButton
+    {
+        background-image: url('/pictures/comic_juggler_500.jpeg');
+        max-width: 500px;
+        max-height: 500px;
+        width: 80dvw;
+        height: 80dvw;
+    }
+
+    .gameDialog
+    {
+        background-image: url('/pictures/scenes/sm/1.jpg');
+    }
+}
+
+.splashButton:hover::before
+{
+    content: "Ready to rumble?";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}

@@ -1,0 +1,24 @@
+{
+    "highscores": [
+      {
+        "player": "Arthur Dent",
+        "score": 42
+      },
+      {
+        "player": "Trillian",
+        "score": 39
+      },
+      {
+        "player": "Zaphod Beeblebrox",
+        "score": 35
+      },
+      {
+        "player": "Marvin the Paranoid Android",
+        "score": 30
+      },
+      {
+        "player": "Ford Prefect",
+        "score": 15
+      }
+    ]
+  }

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Template</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .chunk {
+            background-color: antiquewhite;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(83, 146, 70, 0.685);
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 440px;
+        }
+
+        button {
+            background-color: lightslategray;
+        }
+
+        button,
+        .outputBox {
+            border: none;
+            background-color: slategray;
+            border: 0px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 10px;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-bottom: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            margin-right: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input id="englishInput" value="" type="text" placeholder="Engelska" /> <br>
+        <input id="swedishInput" value="" type="text" placeholder="Svenska" /> <br>
+        <button id="addWordsButton" onclick="onWriteToFileButton()">Addera innehåll !</button>
+        <br>
+
+        <button id="getFromFileButton" onclick="onGetFromFileButton()">Kontrollera innehåll !</button>
+        <br>
+
+        <div id="outputBox" class="outputBox"></div>
+    </div>
+    <script>
+        let getFromFileButton = document.querySelector('#getFromFileButton');
+        let display = document.querySelector("#outputBox");
+
+        let globalJsonVariable;
+
+        let appendElements = (sentences) =>
+        {
+            display.innerHTML = '';
+            globalJsonVariable = sentences;
+            for (let index = 0; index < sentences.length; index++)
+            {
+                const element = sentences[index];
+                display.innerHTML += `<div class="chunk">${ element.engelska }<br>${ element.svenska }</div><br>`;
+            }
+            //console.log(globalJsonVariable);
+        }
+
+        let onGetFromFileButton = () =>
+        {
+            fetch('/readfile')
+                .then((response) =>
+                {
+                    return response.json();
+                })
+                .then((data) =>
+                {
+                    let sentenceArray = data.sentence;
+                    appendElements(sentenceArray);
+                })
+                .catch((error) =>
+                {
+                    console.error(error);
+                });
+        };
+        onGetFromFileButton();
+        
+        function onWriteToFileButton()
+        {
+            let engText = document.querySelector('#englishInput').value;
+            let sweText = document.querySelector('#swedishInput').value;
+            let sentence = { engelska: engText, svenska: sweText };
+            globalJsonVariable.push(sentence);
+
+            let jsonData = JSON.stringify(globalJsonVariable);
+            console.log(typeof(jsonData))
+            console.log(jsonData)
+
+            fetch("/", {
+                method: "post",
+                headers: {
+                    "Content-Type": "text/plain"
+                    // "Content-Type": "application/json"
+                },
+                body: jsonData,
+                //body: aText,
+            })
+                .then((aResponse) =>
+                {
+                    return aResponse.text()
+                })
+                .then((aDataItem) =>
+                {
+                    display.innerHTML = aDataItem
+                    //console.log(aDataItem)
+                })
+                .catch((aError) =>
+                {
+                    console.log(aError)
+                })
+        };
+    </script>
+</body>
+
+</html>

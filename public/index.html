@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Tror jag gör svenska till huvudspråk senare. KOM IHÅG att senare definiera lang"en" på de divar som skriver ut engelska -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrambled words</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <!-- BUTTONS -->
+    <button id="playButton" class="buttonGrowth">
+        Play
+    </button>
+
+    <button id="infoButton" class="buttonGrowth">
+        About
+    </button>
+
+    <button id="highscoreButton" class="buttonGrowth">
+        Highscore
+    </button>
+
+    <button id="cancelButton" class="buttonGrowth">
+        Cancel
+    </button>
+
+    <!-- DIALOGS -->
+    <div id="gameDialog" class="gameDialog">
+
+        <div id="splashButton" class="splashButton"></div>
+        <div id="mainFrame" class="mainFrame">
+
+            <div id="HINT" class="hintDiv"></div>
+            <div id="GOAL" class="rowdiv_aPrioCards goalDiv"></div>
+
+            <div id="dividingDiv" class="dividingDiv" style="display: none;">
+                <p id="countdownLabel" class="countdownLabel"></p>
+                <p id="succesCountLabel" class="succesCountLabel"></p>
+                <p id="congratulationMessage" class="congratulationMessage">Congratulations<br>you made it!<br> Click here
+                    for next puzzle!</p>
+                <p id="scoreLabel" class="scoreLabel"></p>
+
+            </div>
+
+            <div id="START" class="rowdiv_aPrioCards startDiv"></div>
+            <div class="buttonRow">
+                <button id="pauseButton" class="pauseButton">Pause</button>
+                <button id="closeGameButton" class="closeGameButton">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutDialog" class="dialogs aboutDialog">
+        <div>
+            Spelet går ut på att bilda meningar genom att dra ord från den nedre panelen till den övre och
+            placera dem i rätt ordning. Man får ett poäng per ord på rätt plats och om man får ihop hela meningen
+            adderas poängen till totalen plus att man får en extra poäng per hel minut man har kvar av tiden.
+            innan man flyttas till nästa nivå.  Mycket nöje.
+        </div>
+        <div>
+            <img src="/pictures/hint.png" alt="Bild med pilar som visar" width="200" height="200">
+        </div>
+
+        <button class="closeButton">
+            Close
+        </button>
+    </div>
+
+    <div id="highscoreDialog" class="dialogs">
+        <div id="hs-container" class="hs-container hs-center hs-animate-right">
+            <table id="highscoreTable">
+            </table>
+        </div>
+        <button class="closeButton">
+            Close
+        </button>
+    </div>
+
+    <div id="cancelDialog" class="dialogs">
+        Tack för att du har spelat Scrambles words.
+        [TODO Här kan man lägga in en knapp som tar en tillbaka till sidan som tog en till spelet.]
+        <button class="closeButton">
+            Exit
+        </button>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+
+</body>
+
+</html>
