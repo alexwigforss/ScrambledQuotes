@@ -6,13 +6,14 @@
 let express = require("express")
 const oApp = express()
 let bodyParser = require('body-parser')
-console.log("Server started at http://localhost:5005/")
+console.log("Server started at http://localhost:8080/")
 
 // Add this line to parse incoming JSON payloads [says Bing]
 oApp.use(express.json());
 
 // METHODS FOR BROWSER
-oApp.listen(5005)
+// oApp.listen(5005)
+oApp.listen(8080)
 oApp.use(express.static('public'));
 // oApp.use(bodyParser.text({ type: 'text/plain' }))
 
