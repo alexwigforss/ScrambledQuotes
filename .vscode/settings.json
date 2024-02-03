@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/c8cf2207-974a-4c33-9827-4c20060b9c7f/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/QuoteScrambler",
+    "appService.deploySubpath": "."
+}
