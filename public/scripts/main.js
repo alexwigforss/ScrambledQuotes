@@ -487,10 +487,17 @@ splashScreenButton.addEventListener("click", () => {
                     // DOIN Ask for name and Add to highscore if qualified.
                     let highscoreplace = checkHighScore(totalScore + succesCount);
                     if (highscoreplace >= 0) {
+                        // TODO Change this so it inserts new highscore instead of owerwrite it.
                         const input = prompt("You made it to the highscore \uD83D\uDE00 Please enter your name:");
                         scoreset.highscores[highscoreplace].player = input;
                         scoreset.highscores[highscoreplace].score = totalScore + succesCount;
                         writeToHighScore();
+                        // const newHighscore = {
+                        //     player: input,
+                        //     score: totalScore + succesCount
+                        // };
+                        // scoreset.highscores.push(newHighscore); // Append the new entry to the highscores array
+                        // writeToHighScore();
                         // console.log(scoreset.highscores);
                     }
                 }
