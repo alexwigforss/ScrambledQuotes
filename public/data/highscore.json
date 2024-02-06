@@ -1,1 +1,24 @@
-{"highscores":[{"player":"Arthur Dent","score":60},{"player":"Trillian","score":39},{"player":"Zaphod Beeblebrox","score":35},{"player":"Marvin the paranoid android","score":16},{"player":"None","score":16}]}
+{
+    "highscores": [
+      {
+        "player": "Arthur Dent",
+        "score": 42
+      },
+      {
+        "player": "Trillian",
+        "score": 39
+      },
+      {
+        "player": "Zaphod Beeblebrox",
+        "score": 35
+      },
+      {
+        "player": "Marvin the Paranoid Android",
+        "score": 30
+      },
+      {
+        "player": "Ford Prefect",
+        "score": 15
+      }
+    ]
+  }

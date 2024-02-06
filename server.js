@@ -114,7 +114,6 @@ const writeToFile = (aText) =>
         {
             aResponse.status(500).send('Error writing file');
             return console.error(aError)
-
         }
         console.log("Data written succesfully!...")
     })
