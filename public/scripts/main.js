@@ -22,9 +22,6 @@ async function getData() {
 }
 getData();
 
-
-// HIGHSCORE DATA COLLECTION
-let scoreset
 if (typeof scoreset === "undefined") {
     console.log('BAM defining soreset');
     scoreset = [];

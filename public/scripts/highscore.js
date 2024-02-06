@@ -1,5 +1,3 @@
-let scoreset = [];
-
 // DATA COLLECTION
 async function fetchData()
 {
@@ -26,7 +24,7 @@ function populateTable()
     for (let index = 0; index < numberOfScores; index++)
     {
         const element = scoreset.highscores[index];
-        console.log(element);
+        // console.log(element);
         let row = document.createElement("tr");
         let name_cell = document.createElement("td");
         let h1_1 = document.createElement("h1");

@@ -102,3 +102,5 @@ closeButtons.forEach((button) =>
         }, { once: true });
     });
 });
+
+let scoreset = [];
